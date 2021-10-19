@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
 })
 
 function isNumeric(n) {
- return !isNaN(parseFloat(n)) && isFinite(n);
+ return { isNumber: !isNaN(parseFloat(n)) && isFinite(n), theNumber: n };
 }
 
 let createButtonToDeleteAll = document.createElement("button")
@@ -110,14 +110,18 @@ const dropDownElementDOM = document.querySelectorAll(".dropDownElement")
 
 for (const x of dropDownElementDOM) {
  x.addEventListener("click", (e) => {
-  if (isNumeric(e.target.textContent)) {
+  if (isNumeric(e.target.textContent)["isNumber"]) {
    howMuchInTheList = e.target.textContent
    cointainerEnterNewItemsDOM.children[0].children[0].textContent = `(${howMuchInTheList} items)`
   } else {
    let askToUser = prompt("How many items you want? Use only numbers", 1)
-   if (isNumeric(askToUser)) {
-    howMuchInTheList = askToUser
-    cointainerEnterNewItemsDOM.children[0].children[0].textContent = `(${howMuchInTheList} items)`
+   if (isNumeric(askToUser)["isNumber"]) {
+    if (isNumeric(askToUser)["theNumber"] > 0) {
+     howMuchInTheList = askToUser
+     cointainerEnterNewItemsDOM.children[0].children[0].textContent = `(${howMuchInTheList} items)`
+    } else {
+     alert("Your number is less or equal to 0")
+    }
    } else {
     alert("Please, enter only numbers")
    }
