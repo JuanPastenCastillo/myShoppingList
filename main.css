@@ -1,0 +1,66 @@
+html {
+ font-family: monospace;
+ font-size: 1.1rem;
+ background: #0d1117;
+ color: rgb(161, 178, 231);
+}
+
+.listItem button {
+ margin-left: 10px;
+}
+
+.listItem li::marker {
+ color: antiquewhite;
+ font-size: 1.2rem;
+ border: 2px white solid;
+}
+
+.listItem li {
+ margin: 9px;
+}
+
+.dropbtn {
+ background-color: hsl(226, 17%, 34%);
+ color: hsl(225, 100%, 84%);
+ padding: 16px;
+ font-size: 16px;
+ border: none;
+ cursor: pointer;
+ border-radius: 5px;
+ margin-bottom: 10px;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+ background-color: #2980b9;
+}
+
+.dropdown {
+ position: relative;
+ display: inline-block;
+}
+
+.dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #f1f1f1;
+ min-width: 160px;
+ overflow: auto;
+ box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+ z-index: 1;
+}
+
+.dropdown-content a {
+ color: black;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+}
+
+.dropdown a:hover {
+ background-color: #ddd;
+}
+
+.show {
+ display: block;
+}
